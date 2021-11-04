@@ -1,2 +1,3 @@
 # Charity funding Project
-Charity funding Project for OOSE
+Full Stack web application using HTML CSS Javascript PHP MySql
+
