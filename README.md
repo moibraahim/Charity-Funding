@@ -1,2 +1,2 @@
-# Charity-funding Project
-Charity-crowdfunding Project for OOSE
+# Charity funding Project
+Charity funding Project for OOSE
