@@ -1,2 +1,2 @@
-# Charity Funding Technical Documentation
+# Charity Funding
 
