@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup</title>
+        <link rel="stylesheet" href="signupcss.css">
+    </head>
+    <body>
+       <div class="border">
+            <br><br>
+            <div class="account">Already have an account? <a href="login.html">Sign up</a></div> 
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="formm">
+            <br>
+                <h1 class ="header" > Sign up</h1>                            
+                        <div class="inpts">
+                            <form name="myform" >
+                                <hr>
+                                <br><br>                   
+                                <input class="fnam" type="text" id="fname" name="fname" placeholder="First name" required>
+                                <input class="snam" type="text" id="lname" name="lname" placeholder="Last name" required>
+                                <br><br>
+                                <input class="mlpswrd"type="email" id="email" name="email" placeholder=" Email address" required>                                
+                                <br><br>
+                                <input class="mlpswrd"type="password" id="password" name="password" placeholder="password" onclick="onButtonClickshow()" required>                                
+                                <br><br>
+                                         <div id ="output" class="hidden">
+                                            <pre>
+                Your password must have:
+                *At least 12 characters
+                *1 uppercase letter
+                *1 lowercase letter
+                *1 number
+                *1 symbol
+                                                </pre>
+                                            </div>
+                                <br><br><br>
+
+                                <button name="NextButton" value="register" onclick="onButtonClickvalid()"class="btton"type="button"style= "width:100px;height: 50px;"  >Next</button>
+
+                                
+                            </form> 
+                      </div>
+        </div>
+    </body>
+    <script src="signup.js"></script>
+</html>
