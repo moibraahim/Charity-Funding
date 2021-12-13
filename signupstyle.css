@@ -1,0 +1,79 @@
+.header
+{
+    font-size: 40px;
+ font-family:Arial, Helvetica, sans-serif;
+}
+.formm{
+    margin: auto;
+    width: 600px;
+    height: 650px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+ font-family:Arial, Helvetica, sans-serif;
+    background-color: white;
+    
+}
+.inpts{
+    background-color:white;
+    height: auto;
+}
+.fnam
+{
+    height: 40px;
+    margin-right: 10px;;
+    border-radius: 3px;
+}
+.snam
+{
+    height: 40px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.mlpswrd
+{
+    height: 40px;
+    border-radius: 3px;
+    width: 370px;
+}
+.btton
+{
+    border-radius: 3px;
+    background-color: rgb(3, 179, 3);
+    color: rgb(242, 237, 237);
+ font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    padding: 5%;
+    background-color: rgba(252, 250, 250, 0.856);
+}
+.hidden{
+    display:none;
+}
+.show{
+    text-align: left;
+    text-justify: auto;
+ font-family:Arial, Helvetica, sans-serif;
+    width: 380px;
+    height: 150px;
+    margin-left: 110px;
+    background-color: white;
+    border-radius: 1px;
+    border: 3px solid gray;
+    display:block;
+}
+.border
+{
+    position:absolute;
+    top:0;
+    background-color:  white;
+    height: 100px;
+    text-align: center;
+    width: 100%;
+}
+.account{
+    font-size: 20px;
+    float: right;    
+    padding-right: 100px;
+}
