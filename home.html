@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale= 1.0">
+    <title>It Matters</title>
+    <link rel="stylesheet" href="css/style.css">
+	    <script src="js/home.js"></script>
+    <!-- Icon -->
+    <link rel="shortcut icon" href="images/logo.png">
+
+</head>
+
+<body>
+    <section class="main">
+        <!-- Top Navigation-->
+        <nav>
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="images/logo.png" />
+            </a>
+            <!--menu-->
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#faculties">Compaigns</a></li>
+                <li><a href="How-it-works.html"> Volunteer</a></li>
+		<li><a href="#faculties">success storys</a></li>
+                <li><a href="login.html"> Login</a></li>
+            </ul>
+        </nav>
+        <!-- Main Content-->
+        <div class="home-content">
+            <!-- Text -->
+            <div class="home-text">
+                <h1>Ready To Create A Change??</h1>
+                <p>We are the problem-solvers, the hand-raisers, the game-changers. We fight for the health, education and financial stability of every person in every community.
+                </p>
+                <!--Login-Button-->
+                <a href="login.html" class="main-login">Join Now</a>
+            </div>
+            <!--Img-->
+            <div class="home-img">
+                <img src="images/undraw_nature_m5ll.svg">
+            </div>
+
+        </div>
+    </section>
+	<!-- Newsletter -->
+      <div class="boxn">
+                <h2>Subscribe To our Newsletter</h2>
+		<p>Subscribe here to get all of our news about Compaigns and Volunteering Events</p>
+                <input type="email" id="email" name="email"placeholder=" Email">	
+		<a href="#">Subscribe</a>
+            </div>
+    <!-- Faculties -->
+    <section class="faculties">
+        <a id="faculties"></a>
+        <!-- Heading -->
+        <div class="faculties-heading">
+            <h2>Recent Compaigns</h2>
+            <p>It's not the amount that matters but the meaning behind your donation. Giving a little is better than not giving at all. Even the smallest gift to charity can make a huge impact. The efforts of one person can't move mountains.</p>
+        </div>
+	<div class="menu2">
+            <ul>
+                <li><a href="home.html">Medical</a></li>
+                <li><a href="home.html">Clothes</a></li>
+                <li><a href="home.html">Food</a></li>
+		<li><a href="home.html">Constractions</a></li>
+                <li><a href="home.html"> View All > </a></li>
+            </ul>
+        </div>
+        <!-- Box-Container -->
+        <div class="faculties-container">
+            <!-- Food Donations -->
+            <div class="box">
+                <img src="images/fooddon.jpg">
+        <font>Contribution to BuY Food for poor people who are indeed</font>
+		<table>
+		<tr>
+		<td>Target</td>
+		<td>Funded</td>
+		<td>Remain</td>
+		</tr>
+		<tr>
+		<td>20,000LE</td>
+		<td>9,000LE</td>
+		<td>11,000LE</td>
+		</tr>
+		</table>
+			<div id="myProgress">
+ 			 <div id="myBar">Progress</div>
+			</div>
+<p>Enter Your Donation Amount</p>
+<input type="amount" id="pay1" name="pay1"placeholder=" Amount">
+<div>
+<input type="checkbox" id="zakah" name="zakah" value="true">
+<label for="zakah">This Donation is Zakat</label>
+</div>    
+                <!-- Button -->
+                <button onclick="move()">Donate</button>
+		<td><button>Checke </button></td>
+	
+            </div>
+            <!-- Medical-->
+            <div class="box">
+                <img src="images/meddon.jpg">
+                <font>Contribution for the constraction of Aswan Hospital</font>
+		<table>
+		<tr>
+		<td>Target</td>
+		<td>Funded</td>
+		<td>Remain</td>
+		</tr>
+		<tr>
+		<td>30,000LE</td>
+		<td>18,000LE</td>
+		<td>12,000LE</td>
+		</tr>
+		</table>
+			<div id="myProgress">
+ 			 <div id="myBar2">Progress</div>
+			</div>
+<p>Enter Your Donation Amount</p>
+<input type="amount" id="pay1" name="pay1"placeholder=" Amount">
+<div>
+<input type="checkbox" id="zakah" name="zakah" value="true">
+<label for="zakah">This Donation is Zakat</label>
+</div>    
+            <!-- Button -->
+                
+		
+		<td><button onclick="movee()">Donate</button></td>
+		<td><button>Checke </button></td>
+		
+	
+            </div>
+            <!-- Winter-->
+            <div class="box">
+                <img src="images/winterdon.jpg">
+                 <font>Contribution to Buy clothes for poor people </font>
+		<table>
+		<tr>
+		<td>Target</td>
+		<td>Funded</td>
+		<td>Remain</td>
+		</tr>
+		<tr>
+		<td>40,000LE</td>
+		<td>22,000LE</td>
+		<td>18,000LE</td>
+		</tr>
+		</table>
+			<div id="myProgress">
+ 			 <div id="myBar3">Progress</div>
+			</div>
+<p>Enter Your Donation Amount</p>
+<input type="amount" id="pay1" name="pay1"placeholder=" Amount">
+<div>
+<input type="checkbox" id="zakah" name="zakah" value="true">
+<label for="zakah">This Donation is Zakat</label>
+</div>                <!-- Button -->
+                <button onclick="moveee()">Donate</button>
+<td><button>Checke </button></td>
+		
+	
+            </div>
+	
+        </div>
+
+    </section>
+    <footer>
+        <div>
+        <a href="How-it-works.html">How it works</a>
+        <a href="terms_of_use.html">Terms of use</a>
+        <a href="subscribe.html">Subscribe</a>
+        </div>
+        <p>Copyright (C) CloudQ a web app project.</p>
+    </footer>
+</body>
+
+</html>
