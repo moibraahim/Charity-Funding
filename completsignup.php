@@ -87,11 +87,6 @@
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-
-        <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-        </label>
-
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
         <div class="clearfix">
@@ -103,8 +98,7 @@
 
 </body>
 </html>
-
-<?Php
+<?php
 session_start();
 
 $con =mysqli_connect('localhost','root','');
@@ -117,13 +111,12 @@ $result =mysqli_query($con,$s);
 $num =mysqli_num_rows($result);
 if ($num==1)
 {
-    echo "username already exist";
+echo "username already exist";
 }
 else
 {
-    $reg ="insert into usertable(name ,email,password) values ('$name',$email,'$pas')";
-    mysqli_query($con,$reg);
-    echo"registration successful ";
+$reg ="insert into usertable(name ,email,password) values ('$name',$email,'$pas')";
+mysqli_query($con,$reg);
+echo"registration successful ";
 }
 ?>
-
