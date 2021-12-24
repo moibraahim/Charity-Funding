@@ -22,7 +22,7 @@ function onButtonClickvalid()
                         }
                         if(!user.match(ml))
                         {
-                            alert("Username must have alphabet characters only");
+                            alert("Username must have alphabet characters only"); 
                             user2.style.border = "red solid 3px";      
                         }
                         if(!pass.match(ml))
