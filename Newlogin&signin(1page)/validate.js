@@ -23,7 +23,6 @@ function onButtonClickvalid()
                         if(!user.match(ml))
                         {
                             alert("Username must have alphabet characters only");
-                            user2.innerHTML="Please enter a valid name";  
                             user2.style.border = "red solid 3px";      
                         }
                         if(!pass.match(ml))
