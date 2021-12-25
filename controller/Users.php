@@ -13,6 +13,7 @@ class User
     public function register()
     {
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        //Init data
         $data = [
             'username' => trim($_POST['username']),
             'fullname' => trim($_POST['fullname']),
@@ -21,6 +22,12 @@ class User
             'password' => trim($_POST['password']),
             'passwordrepeat' => trim($_POST['passwordrepeat'])
         ];
+          //Validate inputs
+          if(empty($data['usersName']) || empty($data['usersEmail']) || empty($data['usersUid']) || 
+          empty($data['usersPwd']) || empty($data['pwdRepeat'])){
+              flash("register", "Please fill out all inputs");
+              redirect("../signup.php");
+          }
     }
 }
 
