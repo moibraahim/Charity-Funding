@@ -103,7 +103,7 @@ session_start();
 
 $con =mysqli_connect('localhost','root','');
 mysqli_select_db($con,'userregistraion');
-$email =$_POST['email'];
+$useremail =$_POST['email'];
 $pas =$_POST['psw'];
 $name=$_POST['Name'];
 $s ="select * from usertable where name =$'$name' ";
@@ -115,7 +115,7 @@ echo "username already exist";
 }
 else
 {
-$reg ="insert into usertable(name ,email,password) values ('$name',$email,'$pas')";
+$reg ="insert into usertable(name ,email,password) values ('$name',$useremail,'$pas')";
 mysqli_query($con,$reg);
 echo"registration successful ";
 }
