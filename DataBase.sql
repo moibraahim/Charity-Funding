@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2022 at 11:51 PM
+-- Generation Time: Jan 07, 2022 at 10:32 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -309,31 +309,6 @@ CREATE TABLE `status` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statusdonationdetails`
---
-
-CREATE TABLE `statusdonationdetails` (
-  `id` int(11) NOT NULL,
-  `statusid` int(11) NOT NULL,
-  `donationdetailsid` int(11) NOT NULL,
-  `userid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `statusparent`
---
-
-CREATE TABLE `statusparent` (
-  `id` int(11) NOT NULL,
-  `statusid` int(11) NOT NULL,
-  `parentid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `theme`
 --
 
@@ -616,12 +591,6 @@ ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `statusdonationdetails`
---
-ALTER TABLE `statusdonationdetails`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `theme`
 --
 ALTER TABLE `theme`
@@ -810,12 +779,6 @@ ALTER TABLE `paymentmethodoptvalue`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `statusdonationdetails`
---
-ALTER TABLE `statusdonationdetails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
