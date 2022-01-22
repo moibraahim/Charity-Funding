@@ -48,6 +48,32 @@ class User {
         }
     }
 
+    //Donation List
+    public function GetDonationList()
+        {
+            $conn = mysqli_connect('localhost', 'root','' , "charityfunding");
+            // Check connection
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT userid, username, userage FROM user";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) 
+            {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+            echo "<tr><td>" . $row["userid"]. "</td><td>" . $row["username"] . "</td><td>" . $row["userage"]. "</td></tr>";
+            }
+            echo "</table>";
+            } 
+            else 
+            { 
+                echo "0 results"; 
+            }
+
+        }
+
     //Login user
     public function login($nameOrEmail, $password){
         $row = $this->findUserByEmailOrUsername($nameOrEmail, $nameOrEmail);

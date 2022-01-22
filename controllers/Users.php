@@ -76,6 +76,16 @@
             }
         }
 
+
+    public function GetDonationList()
+    {         
+        $this->userModel->GetDonationList()
+        if(!($this->userModel->GetDonationList()))
+        {
+            die("Something went wrong");
+        }
+    }
+
     public function login(){
         //Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
