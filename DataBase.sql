@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2022 at 10:32 PM
+-- Generation Time: Jan 24, 2022 at 03:37 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -105,13 +105,26 @@ CREATE TABLE `donationdetails` (
 
 CREATE TABLE `event` (
   `id` int(11) NOT NULL,
-  `name` int(225) NOT NULL,
+  `name` varchar(225) NOT NULL,
   `code` varchar(225) NOT NULL,
   `description` text NOT NULL,
-  `isdeleted` tinyint(1) NOT NULL,
+  `location` text NOT NULL,
+  `isdeleted` tinyint(1) NOT NULL DEFAULT 0,
   `createdat` timestamp NULL DEFAULT current_timestamp(),
   `updatedat` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`id`, `name`, `code`, `description`, `location`, `isdeleted`, `createdat`, `updatedat`) VALUES
+(15, 'xdxdxdxd', 'xdxddxd', 'xdxddx', 'xdxdxd', 0, '2022-01-22 00:43:21', '2022-01-22 00:43:21'),
+(16, 'abab', 'aba', 'aba', 'aaaa', 0, '2022-01-22 00:45:35', '2022-01-22 00:45:35'),
+(17, 'abab', 'aba', 'aba', 'aaaa', 0, '2022-01-22 01:11:48', '2022-01-22 01:11:48'),
+(18, 'charity evnt ', 'idsuifhsdihsduhids', 'this event is an event that has sometimes a big events', 'roma', 0, '2022-01-22 01:27:10', '2022-01-22 01:27:10'),
+(19, 'freeforall', 'dsjdosifjoisfdj', 'this event is an event taht sometimes has some events', 'el haram odam xdxdxd', 0, '2022-01-24 00:45:01', '2022-01-24 00:45:01'),
+(20, 'fsffsdffdsf', 'asdaff', 'asfasfasf', 'wadaff', 0, '2022-01-24 00:57:09', '2022-01-24 00:57:09');
 
 -- --------------------------------------------------------
 
@@ -282,18 +295,18 @@ CREATE TABLE `paymentmethodoptions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paymentmethodoptvalue`
+-- Table structure for table `paymentmethodopvalue`
 --
 
-CREATE TABLE `paymentmethodoptvalue` (
+CREATE TABLE `paymentmethodopvalue` (
   `id` int(11) NOT NULL,
   `pmopid` int(11) NOT NULL,
   `value` text NOT NULL,
   `donationid` int(11) NOT NULL,
   `isdeleted` tinyint(1) NOT NULL,
-  `createdat` timestamp NULL DEFAULT current_timestamp(),
-  `updatedat` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `createdat` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updatedat` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -304,6 +317,31 @@ CREATE TABLE `paymentmethodoptvalue` (
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `name` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusdonationdetails`
+--
+
+CREATE TABLE `statusdonationdetails` (
+  `id` int(11) NOT NULL,
+  `statusid` int(11) NOT NULL,
+  `donationdetailsid	i` int(11) NOT NULL,
+  `userid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusparent`
+--
+
+CREATE TABLE `statusparent` (
+  `id` int(11) NOT NULL,
+  `statusid` int(11) NOT NULL,
+  `parentid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -361,14 +399,33 @@ CREATE TABLE `user` (
   `userid` int(11) NOT NULL,
   `username` varchar(128) NOT NULL,
   `userfullname` varchar(225) NOT NULL,
-  `usermail` varchar(225) NOT NULL,
+  `useremail` varchar(225) NOT NULL,
   `userage` int(11) NOT NULL,
   `userpassword` varchar(128) NOT NULL,
-  `joindate` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ipaddress` varchar(225) NOT NULL,
-  `updatedat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `isdeleted` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `usertypeid` int(11) NOT NULL DEFAULT 1,
+  `joindate` timestamp(6) NULL DEFAULT NULL,
+  `ipaddress` varchar(255) NOT NULL,
+  `updatedat` timestamp(6) NULL DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userid`, `username`, `userfullname`, `useremail`, `userage`, `userpassword`, `usertypeid`, `joindate`, `ipaddress`, `updatedat`, `isdeleted`) VALUES
+(2, 'admin', 'admin', 'admin@admin.admin', 10, '$2y$10$1l/Uk7TC4SxzPEXwTIwZgOq0qcS9aZ6dT3/awhD9dA8/U2n8r/VnK', 2, '2021-12-31 20:49:49.000000', '127.0.0.1', NULL, NULL),
+(12, 'omar', 'omar eid', 'omar@omar.omar', 10, '$2y$10$h9VxF9AyJ1BJNYWqzMYA1.jQHx.uZXRhkarYeG0QWmcl3ubHB.yrS', 1, '2021-12-31 20:49:49.000000', '127.0.0.1', NULL, NULL),
+(17, 'Developer', 'Developer', 'Developer@Developer.Developer', 10, '$2y$10$gCBGCPK2e1qO8wCscE8tj.eFOkigD7H10HrmxpQX3Nt7iHJZXfkKu', 3, '2022-01-07 22:33:44.000000', '127.0.0.1', NULL, NULL),
+(18, 'qdwwq', 'adaw', 'asdwa@asdad.com', 12, '$2y$10$s2wMfoWj0pvEv.huISTePe70Aoa0iZbzOJSobyY1h7Y6IFLKLxcty', 1, '2022-01-10 11:49:13.000000', '127.0.0.1', NULL, NULL),
+(19, 'lolol', 'lol', 'loo@lol.com', 12, '$2y$10$2Mq098.Z/RuMAu0QMeJk8Oez49LfkqWRQEWR5rXYYyzQ2GERsGd0C', 1, '2022-01-10 12:04:09.000000', '127.0.0.1', NULL, NULL),
+(20, 'yehiaaaaa', 'yehia', 'loololollol@loo.com', 12, '$2y$10$D9QPv0ZSQC0cIbfc6Ct5rOFIrUxDAIfHS2pbRzcQP0U/mj/lOi3pe', 1, '2022-01-10 12:11:01.000000', '127.0.0.1', NULL, NULL),
+(21, 'ahmed', 'mohamed', 'mohamed@ahmed.com', 29, '$2y$10$6zbtbyapeNT65pQfeqy.n.dUrvn8YIjRj9LTHXR0KRLIfwjfOyow6', 1, '2022-01-10 12:25:50.000000', '127.0.0.1', NULL, NULL),
+(22, 'fefewf', 'efewf', 'wfeges@esfes.com', 13, '$2y$10$YqFJsZ63F4Gt9IJRHqpRvuErfyuEhYzXi4YXga6iGAv7wuRuFptwS', 1, '2022-01-16 21:10:48.000000', '127.0.0.1', NULL, NULL),
+(23, 'gameddw', 'gamed', 'gamd@gamdd.com', 32, '$2y$10$PBinc.DvJHcYV0qTc5.UXeGmGvGJC5Pr1q/51IJwWVg6mWbIwnSoq', 1, '2022-01-16 22:21:12.000000', '127.0.0.1', NULL, NULL),
+(24, 'uuuu', 'uu', 'uua@uu.com', 19, '$2y$10$kYlipPDkQIgCqyF6qugcv.Agmcc7.iVO3.sPspV.My/ilQSwa8G02', 1, '2022-01-18 23:21:53.000000', '127.0.0.1', NULL, NULL),
+(25, 'lololo', 'lol', 'lol@lol.com', 21, '$2y$10$Y0Pl8oqTeV4gLVdTBWZVBOZFwmxJDXAD5W7I/vWiNwsUUHACxAIwu', 1, '2022-01-19 17:45:32.000000', '127.0.0.1', NULL, NULL),
+(26, 'lololo', 'lol', 'yy@yy.com', 55, 'yyyyyy', 2, NULL, 'gugiugig', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -493,8 +550,7 @@ ALTER TABLE `donation`
 --
 ALTER TABLE `donationdetails`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `donationid` (`donationid`,`campaignid`),
-  ADD KEY `campaignid` (`campaignid`);
+  ADD KEY `donationid` (`donationid`,`campaignid`);
 
 --
 -- Indexes for table `event`
@@ -507,8 +563,7 @@ ALTER TABLE `event`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `filetypeid` (`filetypeid`,`userid`),
-  ADD KEY `userid` (`userid`);
+  ADD KEY `filetypeid` (`filetypeid`);
 
 --
 -- Indexes for table `filetype`
@@ -559,8 +614,7 @@ ALTER TABLE `participation`
 --
 ALTER TABLE `partipationdetails`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `participationid` (`participationid`,`eventid`),
-  ADD KEY `eventid` (`eventid`);
+  ADD KEY `participationid` (`participationid`,`eventid`);
 
 --
 -- Indexes for table `paymentmethodid`
@@ -573,13 +627,12 @@ ALTER TABLE `paymentmethodid`
 --
 ALTER TABLE `paymentmethodoptions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `paymentid` (`paymentid`,`optionid`),
-  ADD KEY `optionid` (`optionid`);
+  ADD KEY `paymentid` (`paymentid`,`optionid`);
 
 --
--- Indexes for table `paymentmethodoptvalue`
+-- Indexes for table `paymentmethodopvalue`
 --
-ALTER TABLE `paymentmethodoptvalue`
+ALTER TABLE `paymentmethodopvalue`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pmopid` (`pmopid`,`donationid`),
   ADD KEY `donationid` (`donationid`);
@@ -589,6 +642,22 @@ ALTER TABLE `paymentmethodoptvalue`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `statusdonationdetails`
+--
+ALTER TABLE `statusdonationdetails`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `statusid` (`statusid`,`donationdetailsid	i`,`userid`),
+  ADD KEY `userid` (`userid`),
+  ADD KEY `donationdetailsid	i` (`donationdetailsid	i`);
+
+--
+-- Indexes for table `statusparent`
+--
+ALTER TABLE `statusparent`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `statusid` (`statusid`,`parentid`);
 
 --
 -- Indexes for table `theme`
@@ -608,31 +677,28 @@ ALTER TABLE `translation`
 --
 ALTER TABLE `translationdetails`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `transid` (`transid`,`wordid`,`transwordid`),
-  ADD KEY `wordid` (`wordid`),
-  ADD KEY `transwordid` (`transwordid`);
+  ADD KEY `transid` (`transid`,`wordid`,`transwordid`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`userid`);
+  ADD PRIMARY KEY (`userid`),
+  ADD KEY `usertypeid` (`usertypeid`);
 
 --
 -- Indexes for table `useradressess`
 --
 ALTER TABLE `useradressess`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `userid` (`userid`),
-  ADD KEY `adressid` (`adressid`);
+  ADD KEY `userid` (`userid`,`adressid`);
 
 --
 -- Indexes for table `usermessege`
 --
 ALTER TABLE `usermessege`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `messegeid` (`messegeid`,`userid`),
-  ADD KEY `userid` (`userid`);
+  ADD KEY `messegeid` (`messegeid`,`userid`);
 
 --
 -- Indexes for table `usertype`
@@ -645,8 +711,7 @@ ALTER TABLE `usertype`
 --
 ALTER TABLE `usertypepages`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `usertypeid` (`usertypeid`,`pageid`),
-  ADD KEY `pageid` (`pageid`);
+  ADD KEY `usertypeid` (`usertypeid`,`pageid`);
 
 --
 -- Indexes for table `userusertypes`
@@ -701,7 +766,7 @@ ALTER TABLE `donationdetails`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -770,15 +835,27 @@ ALTER TABLE `paymentmethodoptions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `paymentmethodoptvalue`
+-- AUTO_INCREMENT for table `paymentmethodopvalue`
 --
-ALTER TABLE `paymentmethodoptvalue`
+ALTER TABLE `paymentmethodopvalue`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `statusdonationdetails`
+--
+ALTER TABLE `statusdonationdetails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `statusparent`
+--
+ALTER TABLE `statusparent`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -803,7 +880,7 @@ ALTER TABLE `translationdetails`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `useradressess`
@@ -904,10 +981,25 @@ ALTER TABLE `paymentmethodoptions`
   ADD CONSTRAINT `paymentmethodoptions_ibfk_2` FOREIGN KEY (`optionid`) REFERENCES `options` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `paymentmethodoptvalue`
+-- Constraints for table `paymentmethodopvalue`
 --
-ALTER TABLE `paymentmethodoptvalue`
-  ADD CONSTRAINT `paymentmethodoptvalue_ibfk_1` FOREIGN KEY (`donationid`) REFERENCES `donation` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `paymentmethodopvalue`
+  ADD CONSTRAINT `paymentmethodopvalue_ibfk_1` FOREIGN KEY (`donationid`) REFERENCES `donation` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `paymentmethodopvalue_ibfk_2` FOREIGN KEY (`pmopid`) REFERENCES `paymentmethodoptions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `statusdonationdetails`
+--
+ALTER TABLE `statusdonationdetails`
+  ADD CONSTRAINT `statusdonationdetails_ibfk_1` FOREIGN KEY (`statusid`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `statusdonationdetails_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `statusdonationdetails_ibfk_3` FOREIGN KEY (`donationdetailsid	i`) REFERENCES `donationdetails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `statusparent`
+--
+ALTER TABLE `statusparent`
+  ADD CONSTRAINT `statusparent_ibfk_1` FOREIGN KEY (`statusid`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `translationdetails`
@@ -916,12 +1008,6 @@ ALTER TABLE `translationdetails`
   ADD CONSTRAINT `translationdetails_ibfk_1` FOREIGN KEY (`wordid`) REFERENCES `word` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `translationdetails_ibfk_2` FOREIGN KEY (`transwordid`) REFERENCES `word` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `translationdetails_ibfk_3` FOREIGN KEY (`transid`) REFERENCES `translation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `userusertypes` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `useradressess`
@@ -938,12 +1024,6 @@ ALTER TABLE `usermessege`
   ADD CONSTRAINT `usermessege_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `usertype`
---
-ALTER TABLE `usertype`
-  ADD CONSTRAINT `usertype_ibfk_1` FOREIGN KEY (`id`) REFERENCES `userusertypes` (`usertypeid`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `usertypepages`
 --
 ALTER TABLE `usertypepages`
@@ -954,14 +1034,8 @@ ALTER TABLE `usertypepages`
 -- Constraints for table `userusertypes`
 --
 ALTER TABLE `userusertypes`
-  ADD CONSTRAINT `userusertypes_ibfk_1` FOREIGN KEY (`usertypeid`) REFERENCES `usertype` (`id`),
-  ADD CONSTRAINT `userusertypes_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `word`
---
-ALTER TABLE `word`
-  ADD CONSTRAINT `word_ibfk_1` FOREIGN KEY (`languageid`) REFERENCES `languages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `userusertypes_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `userusertypes_ibfk_2` FOREIGN KEY (`usertypeid`) REFERENCES `usertype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
