@@ -37,7 +37,7 @@ $conn = mysqli_connect('localhost', 'root','' , "charityfunding");
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
-$result = $conn->query("SELECT* FROM Donation_view;");
+$result = $conn->query("SELECT* FROM Participation_List;");
 if ($result->num_rows > 0) 
 {
 // output data of each row
