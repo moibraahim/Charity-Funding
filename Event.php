@@ -5,7 +5,7 @@
 <body>
 
 <h1>create event Form</h1>
-<form action="c.php" method="post">
+<form action="./controllers/Events.php" method="post">
     <p>
         <label for="name">event Name:</label>
         <input type="text" name="name" id="name">
