@@ -12,6 +12,8 @@
         this clas has his own functions but the class does not have any Interaction with the database
         but some function sends paramter to the Model file and model file handle all databsae interaction
     */
+
+    
     class Users {
     
         private $userModel;
