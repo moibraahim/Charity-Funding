@@ -91,14 +91,7 @@
         }
 
 
-    public function GetDonationList()
-    {         
-        $this->userModel->GetDonationList()
-        if(!($this->userModel->GetDonationList()))
-        {
-            die("Something went wrong");
-        }
-    }
+   
 
     public function login(){
         //Sanitize POST data
@@ -116,8 +109,8 @@
             exit();
         }
 
-        //Check for user/email.'ac c'.cs]s;
-        if($this->userModel->findUserByEmailOrUsername($data['useremail/username'], $data['useremail/username'])){
+         //Check for user/email
+         if($this->userModel->findUserByEmailOrUsername($data['useremail/username'], $data['useremail/username'])){
             //User Found
             $loggedInUser = $this->userModel->login($data['useremail/username'], $data['userpassword']);
             if($loggedInUser){
@@ -137,7 +130,16 @@
         $_SESSION['username'] = $user->username;
         $_SESSION['userfullname'] = $user->userfullname;
         $_SESSION['useremail'] = $user->useremail;
-        redirect("../index.php");
+        $_SESSION['usertypeid'] = $user->usertypeid;
+        if ($_SESSION['usertypeid'] ==  2)
+        {
+            redirect("../Dashboard");
+        }
+        else
+        {
+            redirect("../index.php");
+        }
+       
     }
 
     public function logout(){

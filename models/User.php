@@ -46,9 +46,8 @@ class User {
         }
     }
 
-<<<<<<< HEAD
-    
-=======
+   
+    /*
     //Donation List
     public function GetDonationList()
         {
@@ -74,8 +73,8 @@ class User {
             }
 
         }
+        */
 
->>>>>>> 703f9820bc3f12e76aa505748446b0f6ba77071a
     //Login user
     public function login($nameOrEmail, $password){
         $row = $this->findUserByEmailOrUsername($nameOrEmail, $nameOrEmail);
@@ -88,7 +87,9 @@ class User {
         }else{
             return false;
         }
+
     }
+    
 
     
 }
