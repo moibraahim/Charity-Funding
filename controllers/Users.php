@@ -13,7 +13,6 @@
         but some function sends paramter to the Model file and model file handle all databsae interaction
     */
 
-    
     class Users {
     
         private $userModel;
