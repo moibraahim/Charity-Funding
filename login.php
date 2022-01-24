@@ -1,4 +1,3 @@
-
 <?php 
     include_once 'header.php';
     include_once './helpers/session_helper.php';
@@ -14,7 +13,7 @@
     <button type="submit" name="submit">Log In</button>
     </form>
 
-    <div class="form-sub-msg"><a href="./reset-password.php">Forgotten Password?</a></div>
+    <div class="form-sub-msg"><a href="./ParticipationList.php">Forgotten Password?</a></div>
     
 <?php 
     include_once 'footer.php'
