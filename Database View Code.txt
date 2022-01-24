@@ -1,0 +1,17 @@
+**************************************************************
+Participation List Code :
+
+create view Participation_List AS 
+SELECT user.username , event.name , participation.description , participation.createdat 
+FROM user , event , participation , partipationdetails 
+WHERE user.userid = participation.userid and partipationdetails.participationid = participation.id and event.id = partipationdetails.eventid;
+
+**************************************************************
+Donation List Code :
+
+create view Donation_List AS 
+SELECT user.userid , user.username , campaign.name , paymentmethodopvalue.value , donation.createdat 
+FROM user , campaign , paymentmethodopvalue , donationdetails , donation 
+WHERE user.userid = donation.userid and donationdetails.donationid = donation.Id and campaign.id = donationdetails.campaignid and paymentmethodopvalue.donationid = donation.Id;
+
+**************************************************************
