@@ -7,6 +7,8 @@
 
     <?php flash('register') ?>
 
+    
+    
     <form method="post" action="./controllers/Users.php">
         <input type="hidden" name="type" value="register">
         <input type="text" name="userfullname" placeholder="Enter your full name">
@@ -16,8 +18,10 @@
         <input type="password" name="userpassword" placeholder="Enter your password">
         <input type="password" name="repeatpassword" placeholder="Repeat your password">
         <button type="submit" name="submit">Sign Up</button>
+    
     </form>
     
 <?php 
     include_once 'footer.php'
+    
 ?>

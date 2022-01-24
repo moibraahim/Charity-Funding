@@ -25,13 +25,11 @@ class User {
         }
     }
 
-    public function GetIp()
-    {
-        return $_SERVER['REMOTE_ADDR'];
-    }
+   
     //Register User
     public function register($data){
         $ipaddress = $_SERVER['REMOTE_ADDR'];
+        // Later :ipaddress
         $this->db->query('INSERT INTO user (username, userfullname, useremail, userage, userpassword, joindate , ipaddress) 
         VALUES (:username, :userfullname, :useremail, :userage, :userpassword, CURRENT_TIME(), "127.0.0.1" )');
         //Bind values
@@ -48,6 +46,7 @@ class User {
         }
     }
 
+    
     //Login user
     public function login($nameOrEmail, $password){
         $row = $this->findUserByEmailOrUsername($nameOrEmail, $nameOrEmail);

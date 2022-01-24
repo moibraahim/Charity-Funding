@@ -3,16 +3,27 @@
     require_once '../models/User.php';
     require_once '../helpers/session_helper.php';
 
-    class Users {
-        private $userModel;
 
+
+    //This the Users Class Controller
+    /* 
+        this class recive all post data from the signup or login form in the data[] array
+        this class check and validate all of the input data  from signip and login form
+        this clas has his own functions but the class does not have any Interaction with the database
+        but some function sends paramter to the Model file and model file handle all databsae interaction
+    */
+    class Users {
+    
+        private $userModel;
+        
         public function __construct(){
+            // Creating instace from the user model so, you can access userModel Functions that handle SQL statement
             $this->userModel = new User;
         }
 
         public function register(){
             //Process form
-            
+
             //Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -26,6 +37,8 @@
                 'repeatpassword' => trim($_POST['repeatpassword'])
             ];
 
+          
+      
             //Validate that inputs is not empty
             if (  empty($data['userfullname']) || empty($data['username']) || empty ($data['useremail']) || empty($data['userage']) || empty($data['userpassword']) || empty($data['repeatpassword'])  )
             {
@@ -59,7 +72,7 @@
             }
 
             //User with the same email or password already exists
-            if($this->userModel->findUserByEmailOrUsername($data['useremail'], $data['userfullname'])){
+            if($this->userModel->findUserByEmailOrUsername($data['useremail'], $data['username'])){
                 flash("register", "Username or email already taken");
                 redirect("../signup.php");
             }
@@ -92,7 +105,7 @@
             exit();
         }
 
-        //Check for user/email
+        //Check for user/email.'ac c'.cs]s;
         if($this->userModel->findUserByEmailOrUsername($data['useremail/username'], $data['useremail/username'])){
             //User Found
             $loggedInUser = $this->userModel->login($data['useremail/username'], $data['userpassword']);
@@ -125,6 +138,8 @@
     }
 }
 
+
+    // Creeating instance from the Users Class
     $init = new Users;
 
     //Ensure that user is sending a post request
