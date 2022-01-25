@@ -24,12 +24,17 @@ class event {
          $this->updatedat=$row["updatedat"];
      }
     }
-    function insert($name,$code,$description,$location)
+    function dlt($id)
 {
+    $timestamp = date('Y-m-d H:i:s');
     $con = mysqli_connect('localhost','root','','charityfunding');   
-    $sql="INSERT INTO event( name, code, description, location) VALUES ('$name','$code','$description','$location')";
-    //echo $sql;
-    $eventdataset = mysqli_query($con,$sql);
+    $mysqli_query_statement = "UPDATE event SET isdeleted=1,updatedat='$timestamp' WHERE id=$id";
+    if ($con->query($mysqli_query_statement) === TRUE) {
+        echo "Record deleted successfully.";
+    }
+    else{
+        echo "erororororroo". mysqli_error($con);;
+    }
 }
 
 }
