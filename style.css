@@ -158,4 +158,16 @@ a, a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: inherit;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
+table {
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+
+
 /*# sourceMappingURL=style.css.map */

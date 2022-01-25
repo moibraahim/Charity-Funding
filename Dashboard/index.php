@@ -191,22 +191,42 @@ if(!isset($_SESSION['username'])){
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
                 <span class="menu-title">Manage Users</span>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-table-large menu-icon"></i>
               </a>
+              <div class="collapse" id="general-pages">
+      
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/UserView.php">View Users</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/User.php">Create User </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/ParticipationList.php">List Events Patrcipants</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/DonationList.php">List Users Donations</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="l">
-                <span class="menu-title">Manage Campaigns </span>
+                <span class="menu-title">Manage Campaigns</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
+              <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
                 <span class="menu-title">Manage Events</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-table-large menu-icon"></i>
               </a>
+              <div class="collapse" id="general-pages">
+      
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/EventView.php">View Events </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/Event.php">Create Event </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/EventUpdate.php">Update Event</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/EventDelete.php">Delete Event</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/forms/basic_elements.html">

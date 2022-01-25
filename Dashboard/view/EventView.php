@@ -1,18 +1,9 @@
 <head>
 <meta charset="UTF-8">
-<title>delete event Form</title>
-</head>
-<body>
+<title>View Event</title>
+<link rel="stylesheet" type="text/css" href="../../style.css" />
 
-<h1>DELETE event Form</h1>
-<form action="/controllers/EventsDelete.php" method="post">
-</p>enter the id of the event you wanna delete</p>
-    <p>
-        <label for="id">event id:</label>
-        <input type="text" name="id" id="id">
-    </p>
-    <input type="submit" value="Submit">
-</form>
+</head>
 
 <?php
 ////viewing event rows
@@ -20,7 +11,7 @@
   $query = "SELECT * FROM event";
 $results=mysqli_query($con,$query);
 $row_count=mysqli_num_rows($results);
-echo '<h1>events</h1>';
+echo '<h1 style="text-align:center;">All Events</h1>';
   echo "<table>";
   echo '<th><p>id</p></th>';
   echo '<th><p>name</p></th>';
@@ -39,7 +30,3 @@ while ($row = mysqli_fetch_array($results)) {
 echo "</table>";
   $conn = NULL;
 ?>
-<br><br>
-
-</body>
-</html>
