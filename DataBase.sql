@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2022 at 03:37 AM
+-- Generation Time: Jan 25, 2022 at 05:02 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -45,12 +45,29 @@ CREATE TABLE `address` (
 CREATE TABLE `campaign` (
   `id` int(11) NOT NULL,
   `name` varchar(225) NOT NULL,
+  `goalprice` varchar(225) NOT NULL DEFAULT '0',
   `code` varchar(225) NOT NULL,
   `description` text NOT NULL,
-  `isdeleted` tinyint(1) NOT NULL,
+  `isdeleted` tinyint(1) NOT NULL DEFAULT 0,
   `createdat` timestamp NULL DEFAULT current_timestamp(),
   `updatedat` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `campaign`
+--
+
+INSERT INTO `campaign` (`id`, `name`, `goalprice`, `code`, `description`, `isdeleted`, `createdat`, `updatedat`) VALUES
+(3, 'lol', '100000', 'ggggg', 'hhhh', 0, '2022-01-25 03:04:59', '2022-01-25 02:52:13'),
+(4, 'hello', '20000', 'dadjsd', 'dsadasdads', 0, '2022-01-25 03:05:13', '2022-01-25 03:05:13'),
+(15, 'lol', '40000', 'cddd', 'dddd', 0, '2022-01-25 03:09:07', '2022-01-25 03:09:07'),
+(16, 'lol', '40000', 'cddd', 'dddd', 0, '2022-01-25 03:09:14', '2022-01-25 03:09:14'),
+(17, 'uuuu', 'uuu', 'uuu', 'uuu', 0, '2022-01-25 03:09:29', '2022-01-25 03:09:29'),
+(18, 'uuuu', 'uuu', 'uuu', 'uuu', 1, '2022-01-25 03:09:40', '2022-01-25 02:38:07'),
+(19, 'rrrrrrrr', '23333', '2222', '1111', 0, '2022-01-25 03:10:00', '2022-01-25 03:10:00'),
+(20, 'yyyyyy', '55555', 'rrrrr', 'ffff', 0, '2022-01-25 03:10:19', '2022-01-25 03:10:19'),
+(24, 'rrrrrrrrr', '6666', 'fff', 'gg', 0, '2022-01-25 03:11:15', '2022-01-25 03:11:15'),
+(27, 'xxxxxxxxxxxxxx', '100000', 'gggggggggggggg', 'gggggggggggggg', 0, '2022-01-25 03:20:26', '2022-01-25 03:20:26');
 
 -- --------------------------------------------------------
 
@@ -100,6 +117,20 @@ CREATE TABLE `donationdetails` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `donation_list`
+-- (See below for the actual view)
+--
+CREATE TABLE `donation_list` (
+`userid` int(11)
+,`username` varchar(128)
+,`name` varchar(225)
+,`value` text
+,`createdat` timestamp
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `event`
 --
 
@@ -119,12 +150,33 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `name`, `code`, `description`, `location`, `isdeleted`, `createdat`, `updatedat`) VALUES
-(15, 'xdxdxdxd', 'xdxddxd', 'xdxddx', 'xdxdxd', 0, '2022-01-22 00:43:21', '2022-01-22 00:43:21'),
-(16, 'abab', 'aba', 'aba', 'aaaa', 0, '2022-01-22 00:45:35', '2022-01-22 00:45:35'),
-(17, 'abab', 'aba', 'aba', 'aaaa', 0, '2022-01-22 01:11:48', '2022-01-22 01:11:48'),
+(15, 'charity', 'ffff', 'this event is event', 'hadaba', 1, '2022-01-22 00:43:21', '2022-01-25 00:41:55'),
+(16, 'isdeleted', 'dsjdosifjoisfdj', 'asfasfasf', 'ddd', 0, '2022-01-22 00:45:35', '2022-01-25 00:24:54'),
+(17, 'gamed', 'gamed', 'gamedygdan', 'gamed', 1, '2022-01-22 01:11:48', '2022-01-25 00:42:08'),
 (18, 'charity evnt ', 'idsuifhsdihsduhids', 'this event is an event that has sometimes a big events', 'roma', 0, '2022-01-22 01:27:10', '2022-01-22 01:27:10'),
 (19, 'freeforall', 'dsjdosifjoisfdj', 'this event is an event taht sometimes has some events', 'el haram odam xdxdxd', 0, '2022-01-24 00:45:01', '2022-01-24 00:45:01'),
-(20, 'fsffsdffdsf', 'asdaff', 'asfasfasf', 'wadaff', 0, '2022-01-24 00:57:09', '2022-01-24 00:57:09');
+(20, 'fsffsdffdsf', 'asdaff', 'asfasfasf', 'wadaff', 0, '2022-01-24 00:57:09', '2022-01-24 00:57:09'),
+(21, 'clkajdlkasjdlsadj', 'fsjdjfdslfjl', 'asjdlasdjalsj', 'adjlsadjalsdjasldj', 0, '2022-01-24 16:06:59', '2022-01-24 16:06:59'),
+(22, 'ooo', 'oo', 'oo', 'oo', 0, '2022-01-24 20:31:14', '2022-01-25 00:13:08'),
+(23, 'lolo', 'ffff', 'aaaa', 'ddd', 0, '2022-01-24 20:31:17', '2022-01-24 20:31:17'),
+(24, 'lolo', 'ffff', 'aaaa', 'ddd', 0, '2022-01-24 20:37:38', '2022-01-24 20:37:38'),
+(25, 'asldjasldjasl', 'dlksadlaskdk', 'dlkadlkasd', 'amdlsmadm', 0, '2022-01-24 20:57:34', '2022-01-24 20:57:34'),
+(26, 'asldjasldjasl', 'dlksadlaskdk', 'dlkadlkasd', 'amdlsmadm', 0, '2022-01-24 20:57:39', '2022-01-24 20:57:39'),
+(27, 'asldjasldjasl', 'dlksadlaskdk', 'dlkadlkasd', 'amdlsmadm', 0, '2022-01-24 21:04:34', '2022-01-24 21:04:34'),
+(28, 'asldjasldjasl', 'dlksadlaskdk', 'dlkadlkasd', 'amdlsmadm', 0, '2022-01-24 21:05:43', '2022-01-24 21:05:43'),
+(29, 'asldjasldjasl', 'dlksadlaskdk', 'dlkadlkasd', 'amdlsmadm', 0, '2022-01-24 21:06:25', '2022-01-24 21:06:25'),
+(30, 'gamed', 'gamed', 'gamedygdan', 'gamed', 0, '2022-01-24 23:06:55', '2022-01-24 23:06:55'),
+(31, 'gamed', 'gamed', 'gamedygdan', 'gamed', 0, '2022-01-24 23:07:01', '2022-01-24 23:07:01'),
+(32, 'gamedf', 'gamedff', 'gamedygdanf', 'fff', 0, '2022-01-25 00:28:59', '2022-01-25 00:28:59'),
+(33, 'hh', 'hh', 'hh', 'hh', 0, '2022-01-25 00:29:10', '2022-01-25 00:29:10'),
+(34, 'hh', 'hh', 'hh', 'hh', 0, '2022-01-25 00:29:15', '2022-01-25 00:29:15'),
+(35, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:18', '2022-01-25 03:26:18'),
+(36, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:22', '2022-01-25 03:26:22'),
+(37, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:25', '2022-01-25 03:26:25'),
+(38, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:27', '2022-01-25 03:26:27'),
+(39, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:28', '2022-01-25 03:26:28'),
+(40, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:29', '2022-01-25 03:26:29'),
+(41, 'dssldsj', 'sndald', 'ldalsad', 'dsjdlskjf', 0, '2022-01-25 03:26:29', '2022-01-25 03:26:29');
 
 -- --------------------------------------------------------
 
@@ -247,6 +299,19 @@ CREATE TABLE `participation` (
   `updatedat` timestamp NULL DEFAULT current_timestamp(),
   `createdat` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `participation_list`
+-- (See below for the actual view)
+--
+CREATE TABLE `participation_list` (
+`username` varchar(128)
+,`name` varchar(225)
+,`description` text
+,`createdat` timestamp
+);
 
 -- --------------------------------------------------------
 
@@ -514,6 +579,24 @@ CREATE TABLE `word` (
   `updatedat` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Structure for view `donation_list`
+--
+DROP TABLE IF EXISTS `donation_list`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `donation_list`  AS SELECT `user`.`userid` AS `userid`, `user`.`username` AS `username`, `campaign`.`name` AS `name`, `paymentmethodopvalue`.`value` AS `value`, `donation`.`createdat` AS `createdat` FROM ((((`user` join `campaign`) join `paymentmethodopvalue`) join `donationdetails`) join `donation`) WHERE `user`.`userid` = `donation`.`userid` AND `donationdetails`.`donationid` = `donation`.`Id` AND `campaign`.`id` = `donationdetails`.`campaignid` AND `paymentmethodopvalue`.`donationid` = `donation`.`Id` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `participation_list`
+--
+DROP TABLE IF EXISTS `participation_list`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `participation_list`  AS SELECT `user`.`username` AS `username`, `event`.`name` AS `name`, `participation`.`description` AS `description`, `participation`.`createdat` AS `createdat` FROM (((`user` join `event`) join `participation`) join `partipationdetails`) WHERE `user`.`userid` = `participation`.`userid` AND `partipationdetails`.`participationid` = `participation`.`id` AND `event`.`id` = `partipationdetails`.`eventid` ;
+
 --
 -- Indexes for dumped tables
 --
@@ -742,7 +825,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `campaign`
 --
 ALTER TABLE `campaign`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `customizedreport`
@@ -766,7 +849,7 @@ ALTER TABLE `donationdetails`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `files`
