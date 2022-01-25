@@ -207,10 +207,19 @@ if(!isset($_SESSION['username'])){
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="l">
+              <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
                 <span class="menu-title">Manage Campaigns</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-table-large menu-icon"></i>
               </a>
+              <div class="collapse" id="general-pages">
+      
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/EventView.php">View Campaigns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/Event.php">Update Campaigns </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/Dashboard/view/EventUpdate.php">Remove Campaigns</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
