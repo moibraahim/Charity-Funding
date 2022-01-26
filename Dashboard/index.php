@@ -243,34 +243,12 @@ if(!isset($_SESSION['username'])){
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Tables</span>
-                <i class="mdi mdi-table-large menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-                <span class="menu-title">Sample Pages</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-medical-bag menu-icon"></i>
-              </a>
-              <div class="collapse" id="general-pages">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                </ul>
-              </div>
-            </li>
+           
+            
             <li class="nav-item sidebar-actions">
               <span class="nav-link">
-                <div class="border-bottom">
-                  <h6 class="font-weight-normal mb-3">Projects</h6>
-                </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
+               
+                <a href="/Dashboard/Campaigns/"><button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Campaigns</button></a>
               
               </span>
             </li>
@@ -300,7 +278,7 @@ if(!isset($_SESSION['username'])){
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Total Users <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">$ 15,0000</h2>
+                    <h2 class="mb-5">NULL</h2>
                     <h6 class="card-text">Increased by 60%</h6>
                   </div>
                 </div>
@@ -311,7 +289,7 @@ if(!isset($_SESSION['username'])){
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Total Campaigns <i class="mdi mdi-diamond mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">95,5741</h2>
+                    <h2 class="mb-5">NULL</h2>
                     <h6 class="card-text">Increased by 5%</h6>
                   </div>
                 </div>
@@ -322,7 +300,7 @@ if(!isset($_SESSION['username'])){
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Total Events <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">45,6334</h2>
+                    <h2 class="mb-5">NULL</h2>
                     <h6 class="card-text">Decreased by 10%</h6>
                   </div>
                 </div>
@@ -340,168 +318,15 @@ if(!isset($_SESSION['username'])){
               </div>
             </div>
             
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Recent Tickets</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th> Assignee </th>
-                            <th> Subject </th>
-                            <th> Status </th>
-                            <th> Last Update </th>
-                            <th> Tracking ID </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <img src="assets/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
-                            </td>
-                            <td> Fund is not recieved </td>
-                            <td>
-                              <label class="badge badge-gradient-success">DONE</label>
-                            </td>
-                            <td> Dec 5, 2017 </td>
-                            <td> WD-12345 </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson
-                            </td>
-                            <td> High loading time </td>
-                            <td>
-                              <label class="badge badge-gradient-warning">PROGRESS</label>
-                            </td>
-                            <td> Dec 12, 2017 </td>
-                            <td> WD-12346 </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img src="assets/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel
-                            </td>
-                            <td> Website down for one week </td>
-                            <td>
-                              <label class="badge badge-gradient-info">ON HOLD</label>
-                            </td>
-                            <td> Dec 16, 2017 </td>
-                            <td> WD-12347 </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img src="assets/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
-                            </td>
-                            <td> Loosing control on server </td>
-                            <td>
-                              <label class="badge badge-gradient-danger">REJECTED</label>
-                            </td>
-                            <td> Dec 3, 2017 </td>
-                            <td> WD-12348 </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             
-            <div class="row">
-              <div class="col-md-7 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Project Status</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th> # </th>
-                            <th> Name </th>
-                            <th> Due Date </th>
-                            <th> Progress </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td> 1 </td>
-                            <td> Herman Beck </td>
-                            <td> May 15, 2015 </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> Messsy Adam </td>
-                            <td> Jul 01, 2015 </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> John Richards </td>
-                            <td> Apr 12, 2015 </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 4 </td>
-                            <td> Peter Meggik </td>
-                            <td> May 15, 2015 </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 5 </td>
-                            <td> Edward </td>
-                            <td> May 03, 2015 </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 5 </td>
-                            <td> Ronald </td>
-                            <td> Jun 05, 2015 </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
+           
               </div>
               
             </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="container-fluid d-flex justify-content-between">
-              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
+        
           <!-- partial -->
         </div>
         <!-- main-panel ends -->
