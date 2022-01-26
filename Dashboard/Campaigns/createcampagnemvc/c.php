@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     elseif(preg_match("/^[a-zA-Z0-9]+$/", $name) == 1) {
         echo '<script type="text/javascript">alert("enter a proper name");</script>';
     }
-    elseif ($$goalprice < 0)
+    elseif ($goalprice < 0)
     {
         echo '<script type="text/javascript">alert("enter proper price");</script>';
     }
